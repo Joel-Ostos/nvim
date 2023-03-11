@@ -73,24 +73,6 @@ return require('packer').startup(function(use)
 		  require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 	  end
   }
-
--- Chat gpt 
-
-  use({
-	  'dense-analysis/neural',
-	  config = function()
-		  require('neural').setup({
-			  open_ai = {
-				  api_key = '<YOUR OPENAI API SECRET KEY>'
-			  }
-		  })
-	  end,
-	  requires = {
-		  'MunifTanjim/nui.nvim',
-		  'ElPiloto/significant.nvim'
-	  }
-  })
-
   use('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})
   use('nvim-treesitter/playground')
   
@@ -99,19 +81,32 @@ return require('packer').startup(function(use)
 
 -- LaTeX
   use 'lervag/vimtex'
+
+
 -- para mover lineas 	  
   use 'echasnovski/mini.move'
-  -- terminal flotante  
+
+
+-- terminal flotante  
   use('voldikss/vim-floaterm')
-  -- use('honza/vim-snippets')
+
 -- comentarios  
   use('tpope/vim-commentary')
+
+
 -- linter  
   use ('dense-analysis/ale')
+
+
 -- color 
-use ('savq/melange') 
+-- use ('savq/melange')
+use ('yassinebridi/vim-purpura')
+
+-- iconos
 use 'nvim-tree/nvim-web-devicons'
-use 'xiyaowong/nvim-transparent'
+-- use 'xiyaowong/nvim-transparent'
+
+-- Organización
 use {
   'phaazon/mind.nvim',
   branch = 'v2.2',
@@ -120,10 +115,10 @@ use {
     require'mind'.setup()
   end
 }
--- use 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+-- LEAN 
 use 'Julian/lean.nvim'
-end)
 
+end)
 
 
 
