@@ -13,12 +13,16 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   -- Todo lo que tiene que ver con LSP
+
+
 use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-use 'hrsh7th/nvim-cmp'
-use 'hrsh7th/cmp-nvim-lsp'
-use'L3MON4D3/LuaSnip'
-use 'saadparwaiz1/cmp_luasnip'
-use "rafamadriz/friendly-snippets"
+-- Autocompletado
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use "rafamadriz/friendly-snippets"
+
 use({
   "iamcco/markdown-preview.nvim",
   run = function() vim.fn["mkdp#util#install"]() end,
@@ -52,12 +56,11 @@ use('tpope/vim-commentary')
 use ('dense-analysis/ale')
 
 -- color 
-use ('savq/melange')
-
+-- use ('savq/melange')
+use {'nyoom-engineering/oxocarbon.nvim'}
 -- iconos
 use 'nvim-tree/nvim-web-devicons'
 use 'xiyaowong/nvim-transparent'
 
--- Organización
 end)
 
