@@ -1,129 +1,62 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
--- Packer can manage itself
+  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
--- Para buscar archivos y esas cosas xd
+  -- Para buscar archivos y esas cosas xd
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
--- Todo lo que tiene que ver con LSP
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+  -- Todo lo que tiene que ver con LSP
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
-	}
-	use({
-	  "glepnir/lspsaga.nvim",
-	  branch = "main",
-	  config = function()
-	    require("lspsaga").setup({})
-	  end,
-	  requires = {
-	    {"nvim-tree/nvim-web-devicons"},
-	    --Please make sure you install markdown and markdown_inline parser
-	    {"nvim-treesitter/nvim-treesitter"}
-	  }
-	})
+use 'tpope/vim-fugitive'
+use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+-- Autocompletado
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use "rafamadriz/friendly-snippets"
 
-	use({
-	  "iamcco/markdown-preview.nvim",
-	  run = function() vim.fn["mkdp#util#install"]() end,
-	})
-
--- la linea del margen inferior
-  use {
-	  'nvim-lualine/lualine.nvim',
-	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
 
 -- Empareja los simbolos
-  use {
-	  "windwp/nvim-autopairs",
-	  config = function() require("nvim-autopairs").setup {} end
-  }
+use {
+  "windwp/nvim-autopairs",
+  config = function() require("nvim-autopairs").setup {} end
+}
 
--- Saltos 
-  use {
-	  'phaazon/hop.nvim',
-	  branch = 'v2', -- optional but strongly recommended
-	  config = function()
-		  -- you can configure Hop the way you like here; see :h hop-config
-		  require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-	  end
-  }
-  use('nvim-treesitter/nvim-treesitter', {run = ":TSUpdate"})
-  use('nvim-treesitter/playground')
-  
 -- versiones anteriores del codigo
-  use("mbbill/undotree")
+use("mbbill/undotree")
 
 -- LaTeX
-  use 'lervag/vimtex'
-
+use 'lervag/vimtex'
 
 -- para mover lineas 	  
-  use 'echasnovski/mini.move'
-
-
--- terminal flotante  
-  use('voldikss/vim-floaterm')
+use 'echasnovski/mini.move'
 
 -- comentarios  
-  use('tpope/vim-commentary')
-
+use('tpope/vim-commentary')
 
 -- linter  
-  use ('dense-analysis/ale')
-
+use ('dense-analysis/ale')
 
 -- color 
 -- use ('savq/melange')
-use ('yassinebridi/vim-purpura')
-
+use {'nyoom-engineering/oxocarbon.nvim'}
 -- iconos
 use 'nvim-tree/nvim-web-devicons'
--- use 'xiyaowong/nvim-transparent'
-
--- Organización
-use {
-  'phaazon/mind.nvim',
-  branch = 'v2.2',
-  requires = { 'nvim-lua/plenary.nvim' },
-  config = function()
-    require'mind'.setup()
-  end
-}
--- LEAN 
-use 'Julian/lean.nvim'
-
+use 'xiyaowong/nvim-transparent'
+use 'nvim-treesitter/nvim-treesitter'
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+use "lukas-reineke/indent-blankline.nvim"
 end)
-
-
-
-
-
-
-
 

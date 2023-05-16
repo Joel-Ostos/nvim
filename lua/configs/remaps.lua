@@ -10,7 +10,7 @@ vim.keymap.set("n","<C-s>", ":w<CR>")
 
 --Salir de nvim
 vim.keymap.set("n","<C-q>",":q<CR>")
---Moverse entre buffers
+--Moverse entre tab pages 
 vim.keymap.set("n", '<Tab>', ':tabn<CR>')
 vim.cmd("let g:transparent_enabled = v:true")
 
@@ -41,22 +41,6 @@ vim.keymap.set("n","<leader><leader>s","<cmd>source ~/.config/nvim/after/plugin/
 
 ----------------------------------------------------------------------------------------------------------
 
---Abrir una nueva terminal flotante
-vim.keymap.set('n', '<A-i>', ':FloatermNew<CR>')
-vim.keymap.set("t","<A-i>", vim.cmd.FloatermNew)
-
---Esconder la terminal flotante
-vim.keymap.set('t', '<A-o>', vim.cmd.FloatermHide)
-
---Matar la terminal flotante actual
-vim.keymap.set('t', '<A-k>', vim.cmd.FloatermKill)
-
---Moverse entre diferentes terminales
-vim.keymap.set("n","<A-.>", vim.cmd.FloatermNext)
-vim.keymap.set("t","<A-.>", vim.cmd.FloatermNext)
-vim.keymap.set("n","<A-,>", vim.cmd.FloatermPrev)
-vim.keymap.set("t","<A-,>", vim.cmd.FloatermPrev)
-
 ----------------------------------------------------------------------------------------------------------
 
 local builtin = require('telescope.builtin')
@@ -78,8 +62,4 @@ vim.keymap.set("n","<leader>ps",function()
 end)
 
 ----------------------------------------------------------------------------------------------------------
-
--- LspSaga
-vim.keymap.set("n","<leader>rf",":Lspsaga lsp_finder <CR>")
-vim.keymap.set("n","<leader>df",":Lspsaga peek_definition <CR>")
 
