@@ -25,9 +25,15 @@ require 'lspconfig'.lua_ls.setup {
 require 'lspconfig'.jdtls.setup {
 	capabilities = capabilities
 }
-require'lspconfig'.hls.setup{
+
+require'lspconfig'.ccls.setup{
 capabilities = capabilities
 }
+require'lspconfig'.marksman.setup{
+capabilities = capabilities
+}
+
+
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

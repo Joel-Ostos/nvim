@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
   }
   -- Todo lo que tiene que ver con LSP
 
-
+use 'tpope/vim-fugitive'
 use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 -- Autocompletado
   use 'hrsh7th/nvim-cmp'
@@ -23,12 +23,6 @@ use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'saadparwaiz1/cmp_luasnip'
   use "rafamadriz/friendly-snippets"
 
-use({
-  "iamcco/markdown-preview.nvim",
-  run = function() vim.fn["mkdp#util#install"]() end,
-})
-
--- la linea del margen inferior
 use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -61,6 +55,8 @@ use {'nyoom-engineering/oxocarbon.nvim'}
 -- iconos
 use 'nvim-tree/nvim-web-devicons'
 use 'xiyaowong/nvim-transparent'
-
+use 'nvim-treesitter/nvim-treesitter'
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+use "lukas-reineke/indent-blankline.nvim"
 end)
 
