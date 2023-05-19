@@ -43,21 +43,27 @@ vim.keymap.set("n","<leader><leader>s","<cmd>source ~/.config/nvim/after/plugin/
 
 local builtin = require('telescope.builtin')
 
--- Abrir menu de busqueda de archivos
+-- Abrir menu de búsqueda de archivos
 vim.keymap.set("n", "<C-f>", builtin.find_files, {})
 vim.keymap.set("i", "<C-f>",builtin.find_files,{})
 
 -- Buscar palabra en la que esta se encuentra el cursor
 vim.keymap.set("n", '<leader>bs', builtin.grep_string, {})
 
--- Menu de busqueda de palabras
+-- Menu de búsqueda de palabras
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
---Buscar palabra con la barra de busqueda
+--Buscar palabra con la barra de búsqueda
 vim.keymap.set("n","<leader>ps",function()
 	builtin.grep_string({search = vim.fn.input("Buscar: ")});
 
 end)
 
 ----------------------------------------------------------------------------------------------------------
+-- Activar y desactivar corrección ortográfica  
+vim.keymap.set("n","<leader>con",function()
+	vim.cmd("setlocal spell")
+	vim.cmd("set spelllang=es");
+
+end)
 
