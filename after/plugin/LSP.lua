@@ -25,7 +25,7 @@ require 'lspconfig'.lua_ls.setup {
 require 'lspconfig'.jdtls.setup {
 	capabilities = capabilities
 }
-
+require'lspconfig'.digestif.setup{}
 require'lspconfig'.ccls.setup{
 capabilities = capabilities
 }

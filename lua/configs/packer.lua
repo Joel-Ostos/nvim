@@ -4,24 +4,24 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+use 'wbthomason/packer.nvim'
 
-  -- Para buscar archivos y esas cosas xd
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  -- Todo lo que tiene que ver con LSP
+-- Para buscar archivos y esas cosas xd
+use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  -- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
 
-use 'tpope/vim-fugitive'
-use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+-- Configuraciones para LSP 
+use 'neovim/nvim-lspconfig'
+
 -- Autocompletado
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  use "rafamadriz/friendly-snippets"
+use 'hrsh7th/nvim-cmp'
+use 'hrsh7th/cmp-nvim-lsp'
+use'L3MON4D3/LuaSnip'
+use 'saadparwaiz1/cmp_luasnip'
+use "rafamadriz/friendly-snippets"
 
 use {
   'nvim-lualine/lualine.nvim',
@@ -34,29 +34,30 @@ use {
   config = function() require("nvim-autopairs").setup {} end
 }
 
--- versiones anteriores del codigo
-use("mbbill/undotree")
-
--- LaTeX
-use 'lervag/vimtex'
-
 -- para mover lineas 	  
 use 'echasnovski/mini.move'
 
 -- comentarios  
 use('tpope/vim-commentary')
 
--- linter  
-use ('dense-analysis/ale')
-
 -- color 
--- use ('savq/melange')
 use {'nyoom-engineering/oxocarbon.nvim'}
+use { "arturgoms/moonbow.nvim" }
+
 -- iconos
 use 'nvim-tree/nvim-web-devicons'
+
+-- Vuelve nvim transparente
 use 'xiyaowong/nvim-transparent'
+
+-- Highlightning
 use 'nvim-treesitter/nvim-treesitter'
+
+-- Previsualizacion archivos markdown 
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-use "lukas-reineke/indent-blankline.nvim"
+
+-- Debugger
+use 'mfussenegger/nvim-dap'
+
 end)
 
