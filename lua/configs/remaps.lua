@@ -29,9 +29,7 @@ smap <silent><expr> <Alt-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' :
 
 ----------------------------------------------------------------------------------------------------------
 
--- Undotree 
---Permite ver los cambios recientes en el archivo
-vim.keymap.set("n", "<F5>", ":UndotreeToggle<CR>")
+vim.keymap.set("n", "<leader>,", ":! xelatex %:p<CR>")
 
 ----------------------------------------------------------------------------------------------------------
 
