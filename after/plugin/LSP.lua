@@ -30,10 +30,9 @@ require'lspconfig'.digestif.setup{
 	capabilities = capabilities
 }
 
-require'lspconfig'.ccls.setup{
-capabilities = capabilities
+require'lspconfig'.clangd.setup{
+  capabilities = capabilities
 }
-
 require'lspconfig'.marksman.setup{
 capabilities = capabilities
 }
