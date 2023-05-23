@@ -29,15 +29,10 @@ smap <silent><expr> <Alt-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' :
 
 ----------------------------------------------------------------------------------------------------------
 
-vim.keymap.set("n", "<leader>,", ":! xelatex %:p<CR>")
-
-----------------------------------------------------------------------------------------------------------
-
 -- LuaSnip
 -- Actualiza los snippets contenidos en luasnip
 vim.keymap.set("n","<leader><leader>s","<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>" )
 
-----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------
 
@@ -51,19 +46,8 @@ vim.keymap.set("i", "<C-f>",builtin.find_files,{})
 vim.keymap.set("n", '<leader>bs', builtin.grep_string, {})
 
 -- Menu de búsqueda de palabras
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 
---Buscar palabra con la barra de búsqueda
-vim.keymap.set("n","<leader>ps",function()
-	builtin.grep_string({search = vim.fn.input("Buscar: ")});
-
-end)
 
 ----------------------------------------------------------------------------------------------------------
--- Activar y desactivar corrección ortográfica  
-vim.keymap.set("n","<leader>con",function()
-	vim.cmd("setlocal spell")
-	vim.cmd("set spelllang=es");
-
-end)
 

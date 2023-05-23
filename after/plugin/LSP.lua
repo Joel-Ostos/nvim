@@ -4,7 +4,6 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {
-	-- Server-specific settings. See `:help lspconfig-setup`
 	settings = {
 		['rust-analyzer'] = {},
 	},
@@ -22,13 +21,19 @@ require 'lspconfig'.rust_analyzer.setup {
 require 'lspconfig'.lua_ls.setup {
 	capabilities = capabilities
 }
+
 require 'lspconfig'.jdtls.setup {
 	capabilities = capabilities
 }
-require'lspconfig'.digestif.setup{}
+
+require'lspconfig'.digestif.setup{
+	capabilities = capabilities
+}
+
 require'lspconfig'.ccls.setup{
 capabilities = capabilities
 }
+
 require'lspconfig'.marksman.setup{
 capabilities = capabilities
 }

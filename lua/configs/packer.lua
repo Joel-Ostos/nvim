@@ -13,7 +13,14 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
--- Configuraciones para LSP 
+-- Concentración 
+use {
+  "folke/zen-mode.nvim",
+  config = function()
+    require("zen-mode").setup {
+    }
+  end
+}
 use 'neovim/nvim-lspconfig'
 
 -- Autocompletado
