@@ -51,3 +51,6 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 
 ----------------------------------------------------------------------------------------------------------
 
+vim.keymap.set("n", "<C-x>","<C-w>");
+
+vim.keymap.set("n", "<C-x>f", ":tabnew<CR>");
