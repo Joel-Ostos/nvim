@@ -12,14 +12,9 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
-  -- Concentración 
   use {
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup {
-      }
-    end
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
   }
   use 'neovim/nvim-lspconfig'
 
@@ -54,8 +49,8 @@ return require('packer').startup(function(use)
   use { 'fgheng/winbar.nvim' }
   -- Highlightning
   use 'nvim-treesitter/nvim-treesitter'
-  -- Previsualizacion archivos markdown 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+  use  'vimwiki/vimwiki'
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
 

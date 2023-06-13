@@ -3,6 +3,7 @@ require('mini.move').setup()
 vim.opt.termguicolors = true
 vim.opt.sw = 2
 vim.cmd("colorscheme moonbow")
+vim.cmd("set nocompatible")
 vim.cmd("set encoding=utf-8")
 vim.cmd[[packadd termdebug]]
 vim.cmd([[autocmd VimEnter * tnoremap <Esc> <C-\><C-n>]])
